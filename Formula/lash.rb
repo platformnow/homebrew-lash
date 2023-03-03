@@ -5,20 +5,20 @@
 class Lash < Formula
   desc "Commandline tool to manage PlatformNOW Landscape IDP."
   homepage "https://github.com/platformnow/homebrew-lash"
-  version "0.0.4"
+  version "0.0.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/platformnow/lash/releases/download/v0.0.4/lash_0.0.4_darwin_arm64.tar.gz"
-      sha256 "062b0b3169f71a550f2bbf1a0a8787c81e891a037b0dc4553c54c8fdfe034c9e"
+      url "https://github.com/platformnow/lash/releases/download/v0.0.5/lash_0.0.5_darwin_arm64.tar.gz"
+      sha256 "3a6b195f470582baf6698b96e06b8d63f4590a2a28f385b5b5661dd65db06bfb"
 
       def install
         bin.install "lash"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/platformnow/lash/releases/download/v0.0.4/lash_0.0.4_darwin_amd64.tar.gz"
-      sha256 "aadea392647cfb059b22f9c8a2e449bf13490b0d62bda6df1697b37bbdb4e530"
+      url "https://github.com/platformnow/lash/releases/download/v0.0.5/lash_0.0.5_darwin_amd64.tar.gz"
+      sha256 "5d986cc081b04fea58d89cc865c74411e633a8ea3ed7bc0570565907dd0bf4bf"
 
       def install
         bin.install "lash"
@@ -27,17 +27,17 @@ class Lash < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/platformnow/lash/releases/download/v0.0.4/lash_0.0.4_linux_amd64.tar.gz"
-      sha256 "3c7ab558d667118257d3903691363731afd3b4229e486763e39fbcb7d8cc3b16"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/platformnow/lash/releases/download/v0.0.5/lash_0.0.5_linux_arm64.tar.gz"
+      sha256 "743c09c662bf23d6dccae57fe7b3e2a4a174bcf70aea1f7f134997f20b84dac4"
 
       def install
         bin.install "lash"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/platformnow/lash/releases/download/v0.0.4/lash_0.0.4_linux_arm64.tar.gz"
-      sha256 "f739323bb8878985d6dd0f4d867730c177c74d19765195ec32e9ed7303829bbd"
+    if Hardware::CPU.intel?
+      url "https://github.com/platformnow/lash/releases/download/v0.0.5/lash_0.0.5_linux_amd64.tar.gz"
+      sha256 "fcbd7ddf5befa389e498c93f3b64f7c6e7a5f6978b453b0ec9e989342c7f3e6d"
 
       def install
         bin.install "lash"
